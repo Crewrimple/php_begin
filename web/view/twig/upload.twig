@@ -1,0 +1,19 @@
+<?php
+
+{% include 'header.twig' %}
+
+<div class='message'>{{message}}</div>
+{% if url != '' or url is not null %}
+	<br>
+	<img src='{{url}}'><br><br><a href='{{url}}'>Посмотреть</a>
+{% endif %}
+{% if mime != '' or mime is not null %}
+	<br>
+	<label>{{mime}}</label>
+{% endif %}
+<form enctype="multipart/form-data" method="POST">
+    <input name="userfile" type="file" />
+    <input type="submit" value="Send File" />
+</form>
+
+{% include 'footer.twig' %}
